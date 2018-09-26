@@ -14,7 +14,7 @@ This may generate duplicates numbers if used by multiple application instances (
 
 The integers generated have nanosecond resolution. Because the ID contains this time information, it could present an attack vector. If using these as public identifiers, know that the clients will know the exact time the ID was generated.
 
-Most people should use UUID's (v4 also contains an embedded timestamp).
+Most people should use UUID's (v1 & v2 also contain an embedded timestamp).
 
 ## Background
 
