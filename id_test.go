@@ -5,7 +5,7 @@ import (
 )
 
 // Not really a valid concurrent test, just here for code coverage
-func TestMonotonic(t *testing.T) {
+func TestNext(t *testing.T) {
 
 	prev := Next()
 
@@ -17,4 +17,10 @@ func TestMonotonic(t *testing.T) {
 		prev = id
 	}
 
+}
+
+func BenchmarkNext(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = Next()
+	}
 }
