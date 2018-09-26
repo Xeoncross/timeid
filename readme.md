@@ -8,13 +8,13 @@ Package to generate unique, 64bit integers based on the current nanosecond time.
 
 This package is designed for self-contained applications that need to generate unique identifiers without relying on an external ID source such as Snowflake (or a database like MySQL).
 
-This may generate duplicates numbers if used by multiple application instances (such as a cluster) as the locks only work for a single application's threads.
-
 ## Warning
 
-The integers generated have nanosecond resolution. Because the ID contains this time information, it could present an attack vector. If using these as public identifiers, know that the clients will know the exact time the ID was generated.
+1. The integers generated have nanosecond resolution. Because the ID contains this time information, it could present an attack vector. If using these as public identifiers, know that the clients will know the exact time the ID was generated.
 
-Most people should use UUID's (v1 & v2 also contain an embedded timestamp).
+2. This may generate duplicate numbers if used by multiple application instances (such as a cluster) as the locks only work for a single application's threads.
+
+Most people should use: https://github.com/segmentio/ksuid
 
 ## Background
 
